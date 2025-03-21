@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+// App.tsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ToolsRouter from './routes/ToolsRouter';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/tools/*" element={<ToolsRouter />} />
+        {/* 홈이나 기타 페이지도 여기에 */}
+      </Routes>
+    </Router>
   );
 }
 
