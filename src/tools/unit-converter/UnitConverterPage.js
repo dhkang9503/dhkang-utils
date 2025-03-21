@@ -4,7 +4,7 @@ import { lightTheme, darkTheme } from './theme';
 import GlobalStyle from './GlobalStyle';
 import UnitConverter from './UnitConverter';
 import { useTranslation } from 'react-i18next';
-import { initI18n } from './i18n';
+// import { initI18n } from './i18n';
 import { Helmet } from 'react-helmet-async';
 
 const Wrapper = styled.div`

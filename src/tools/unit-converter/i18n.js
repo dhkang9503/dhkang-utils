@@ -2,18 +2,18 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 // 언어 매핑 (국가코드 -> 언어)
-const countryLangMap = {
-  KR: 'ko',
-  US: 'en',
-  GB: 'en',
-  IT: 'it',
-  ES: 'es',
-  MX: 'es',
-  AR: 'es',
-  DE: 'de',
-  AT: 'de',
-  CH: 'de',
-};
+// const countryLangMap = {
+//   KR: 'ko',
+//   US: 'en',
+//   GB: 'en',
+//   IT: 'it',
+//   ES: 'es',
+//   MX: 'es',
+//   AR: 'es',
+//   DE: 'de',
+//   AT: 'de',
+//   CH: 'de',
+// };
 
 // 기본 언어
 let userLang = navigator.language.split('-')[0] || 'en';
