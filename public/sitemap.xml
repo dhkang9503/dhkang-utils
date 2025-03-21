@@ -3,4 +3,8 @@
     <loc>https://dhkang-utils.netlify.app/tools/pomodoro</loc>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://dhkang-utils.netlify.app/tools/unit-converter</loc>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>
