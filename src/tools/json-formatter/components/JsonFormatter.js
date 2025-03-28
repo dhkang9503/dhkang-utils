@@ -1,0 +1,77 @@
+// src/tools/json-formatter/components/JsonFormatter.js
+import React, { useState, useEffect } from 'react';
+import {
+  TextArea,
+  ResultBox,
+  ValidateStatus,
+  ButtonGroup,
+  ActionButton
+} from '../styles';
+
+const JsonFormatter = ({ isDarkMode }) => {
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState('');
+  const [status, setStatus] = useState(null);
+
+  const handleFormat = () => {
+    try {
+      const parsed = JSON.parse(input);
+      const pretty = JSON.stringify(parsed, null, 2);
+      setOutput(pretty);
+      setStatus('valid');
+    } catch (e) {
+      setOutput(e.message);
+      setStatus('invalid');
+    }
+  };
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(output);
+      alert('Copied to clipboard!');
+    } catch {
+      alert('Failed to copy');
+    }
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (input.trim()) handleFormat();
+      else {
+        setOutput('');
+        setStatus(null);
+      }
+    }, 600); // debounce
+
+    return () => clearTimeout(timeout);
+  }, [input]);
+
+  return (
+    <>
+      <TextArea
+        isDarkMode={isDarkMode}
+        rows="10"
+        placeholder='Paste your JSON here...'
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <ValidateStatus isValid={status === 'valid'}>
+        {status === 'valid' && 'Valid JSON'}
+        {status === 'invalid' && 'Invalid JSON'}
+      </ValidateStatus>
+      <ResultBox
+        isDarkMode={isDarkMode}
+        readOnly
+        rows="10"
+        value={output}
+        placeholder="Formatted JSON will appear here."
+      />
+      <ButtonGroup>
+        <ActionButton onClick={handleFormat}>Format</ActionButton>
+        <ActionButton onClick={handleCopy}>Copy</ActionButton>
+      </ButtonGroup>
+    </>
+  );
+};
+
+export default JsonFormatter;
