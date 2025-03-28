@@ -1,4 +1,3 @@
-// src/tools/lorem-ipsum/components/LoremIpsumGenerator.js
 import React, { useState } from 'react';
 import {
   Input,
@@ -8,24 +7,49 @@ import {
   ResultBox
 } from '../styles';
 
-const loremText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec tincidunt lacinia, nunc est blandit sapien, sit amet facilisis purus odio nec justo.`;
+const sentenceVariants = {
+  short: 'Lorem ipsum dolor sit amet.',
+  medium:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  long:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec tincidunt lacinia, nunc est blandit sapien.',
+};
 
-const generateParagraphs = (count) =>
-  Array.from({ length: count }, () => loremText).join('\n\n');
+const applyStyleTemplate = (text, template) => {
+  switch (template) {
+    case 'uppercase':
+      return text.toUpperCase();
+    case 'html':
+      return `<p>${text.replace(/\n\n/g, '</p><p>')}</p>`;
+    default:
+      return text;
+  }
+};
 
-const generateWords = (count) =>
-  loremText.split(' ').slice(0, count).join(' ') + '.';
+const generateParagraphs = (count, sentenceType) => {
+  const sentence = sentenceVariants[sentenceType];
+  return Array.from({ length: count }, () => sentence).join('\n\n');
+};
+
+const generateWords = (count) => {
+  const words = sentenceVariants.medium.split(' ');
+  return Array.from({ length: count }, (_, i) => words[i % words.length]).join(' ') + '.';
+};
 
 const LoremIpsumGenerator = ({ isDarkMode }) => {
   const [type, setType] = useState('paragraphs');
   const [count, setCount] = useState(3);
+  const [sentenceType, setSentenceType] = useState('medium');
+  const [styleTemplate, setStyleTemplate] = useState('plain');
   const [output, setOutput] = useState('');
 
   const handleGenerate = () => {
-    const value =
+    let value =
       type === 'paragraphs'
-        ? generateParagraphs(count)
+        ? generateParagraphs(count, sentenceType)
         : generateWords(count);
+
+    value = applyStyleTemplate(value, styleTemplate);
     setOutput(value);
   };
 
@@ -44,6 +68,7 @@ const LoremIpsumGenerator = ({ isDarkMode }) => {
         <option value="paragraphs">Paragraphs</option>
         <option value="words">Words</option>
       </Select>
+
       <Input
         type="number"
         min="1"
@@ -52,10 +77,26 @@ const LoremIpsumGenerator = ({ isDarkMode }) => {
         onChange={(e) => setCount(Number(e.target.value))}
         placeholder="Amount"
       />
+
+      {type === 'paragraphs' && (
+        <Select value={sentenceType} onChange={(e) => setSentenceType(e.target.value)}>
+          <option value="short">Short Sentences</option>
+          <option value="medium">Medium Sentences</option>
+          <option value="long">Long Sentences</option>
+        </Select>
+      )}
+
+      <Select value={styleTemplate} onChange={(e) => setStyleTemplate(e.target.value)}>
+        <option value="plain">Plain Text</option>
+        <option value="uppercase">UPPERCASE</option>
+        <option value="html">HTML Paragraphs</option>
+      </Select>
+
       <ButtonGroup>
         <ActionButton onClick={handleGenerate}>Generate</ActionButton>
         <ActionButton onClick={handleCopy}>Copy</ActionButton>
       </ButtonGroup>
+
       <ResultBox isDarkMode={isDarkMode} readOnly rows="10" value={output} />
     </>
   );
