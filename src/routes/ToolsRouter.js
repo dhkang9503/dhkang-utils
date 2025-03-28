@@ -8,9 +8,8 @@ import UnitConverterPage from '../tools/unit-converter/UnitConverterPage';
 const ToolsRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="tools/pomodoro" element={<PomodoroPage />} />
-      <Route path="tools/unit-converter" element={<UnitConverterPage />} />
+      <Route path="pomodoro" element={<PomodoroPage />} />
+      <Route path="unit-converter" element={<UnitConverterPage />} />
     </Routes>
   );
 };
