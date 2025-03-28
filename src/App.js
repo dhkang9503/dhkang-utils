@@ -1,7 +1,7 @@
 // App.tsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ToolsRouter from './routes/ToolsRouter';
-import HomePage from '../pages/HomePage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
