@@ -65,7 +65,7 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>DH Kang Utils - 유용한 도구 모음</title>
+        <title>dhkang utils - 유용한 도구 모음</title>
         <meta
           name="description"
           content="집중력 향상과 일상에 도움이 되는 다양한 유틸리티 도구를 제공합니다. 포모도로 타이머, 단위 변환기 등."
