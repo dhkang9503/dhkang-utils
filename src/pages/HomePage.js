@@ -58,8 +58,9 @@ const AdBanner = styled.div`
 
 const HomePage = () => {
   const tools = [
-    { name: '포모도로 타이머', path: '/tools/pomodoro' },
-    { name: '단위 변환기', path: '/tools/unit-converter' },
+    { name: 'Pomodoro Timer', path: '/tools/pomodoro' },
+    { name: 'Unit Converter', path: '/tools/unit-converter' },
+    { name: 'JSON Formatter & Validator', path: '/tools/json-formatter'}
   ];
 
   return (
