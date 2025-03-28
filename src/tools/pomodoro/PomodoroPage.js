@@ -64,16 +64,17 @@ const PomodoroPage = () => {
       <meta property="og:url" content="https://dhkang-utils.netlify.app/tools/pomodoro" />
       <meta property="og:image" content="https://dhkang-utils.netlify.app/tools/pomodoro" />
       <meta name="twitter:card" content="summary_large_image" />
-    </Helmet>
-    <main>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNVHWFSQFW"></script>
 <script>
+    {`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZNVHWFSQFW');
+`}
 </script>
+    </Helmet>
+    <main>
       <GlobalStyle isDarkMode={isDarkMode} />
       <Container isDarkMode={isDarkMode}>
         <Title>포모도로 타이머</Title>
