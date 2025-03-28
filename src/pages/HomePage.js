@@ -76,7 +76,7 @@ const HomePage = () => {
       </Helmet>
 
       <Container>
-        <Title>DH Kang Utils</Title>
+        <Title>dhkang utils</Title>
         <ToolList>
           {tools.map((tool) => (
             <ToolItem key={tool.path}>
