@@ -99,12 +99,14 @@ function UnitConverterPage() {
         <link rel="canonical" href="https://dhkang-utils.netlify.app/tools/unit-converter/" />
         <link rel="icon" href="/favicon.ico" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFYWHNFJQQ"></script>
-<script>{`
+<script>
+  {`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-XFYWHNFJQQ');`}
+  gtag('config', 'G-XFYWHNFJQQ');
+  `}
 </script>
       </Helmet>
       <main>
