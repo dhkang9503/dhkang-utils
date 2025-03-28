@@ -60,7 +60,8 @@ const HomePage = () => {
   const tools = [
     { name: 'Pomodoro Timer', path: '/tools/pomodoro' },
     { name: 'Unit Converter', path: '/tools/unit-converter' },
-    { name: 'JSON Formatter & Validator', path: '/tools/json-formatter'}
+    { name: 'JSON Formatter & Validator', path: '/tools/json-formatter'},
+    { name: 'RegExp Tester', path: '/tools/regexp-tester'}
   ];
 
   return (
