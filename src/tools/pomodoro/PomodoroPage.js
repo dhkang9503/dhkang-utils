@@ -55,16 +55,6 @@ const PomodoroPage = () => {
 
   return (
     <>
-    <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNVHWFSQFW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZNVHWFSQFW');
-</script>
-    </head>
     <Helmet>
       <title>포모도로 타이머 | MyTools</title>
       <meta name="description" content="집중력을 높이는 포모도로 타이머를 사용해보세요!" />
@@ -76,6 +66,14 @@ const PomodoroPage = () => {
       <meta name="twitter:card" content="summary_large_image" />
     </Helmet>
     <main>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNVHWFSQFW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZNVHWFSQFW');
+</script>
       <GlobalStyle isDarkMode={isDarkMode} />
       <Container isDarkMode={isDarkMode}>
         <Title>포모도로 타이머</Title>
