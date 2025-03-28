@@ -1,5 +1,4 @@
-// src/tools/json-formatter/components/JsonFormatter.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   TextArea,
   ResultBox,
@@ -13,7 +12,7 @@ const JsonFormatter = ({ isDarkMode }) => {
   const [output, setOutput] = useState('');
   const [status, setStatus] = useState(null);
 
-  const handleFormat = () => {
+  const handleFormat = useCallback(() => {
     try {
       const parsed = JSON.parse(input);
       const pretty = JSON.stringify(parsed, null, 2);
@@ -23,7 +22,7 @@ const JsonFormatter = ({ isDarkMode }) => {
       setOutput(e.message);
       setStatus('invalid');
     }
-  };
+  }, [input]);
 
   const handleCopy = async () => {
     try {
@@ -41,10 +40,10 @@ const JsonFormatter = ({ isDarkMode }) => {
         setOutput('');
         setStatus(null);
       }
-    }, 600); // debounce
+    }, 600); // 디바운싱
 
     return () => clearTimeout(timeout);
-  }, [input]);
+  }, [input, handleFormat]);
 
   return (
     <>
