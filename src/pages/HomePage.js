@@ -56,6 +56,13 @@ const AdBanner = styled.div`
   }
 `;
 
+const Description = styled.p`
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin: -20px 0 40px;
+`;
+
 const HomePage = () => {
   const tools = [
     { name: 'Pomodoro Timer', path: '/tools/pomodoro' },
@@ -78,6 +85,10 @@ const HomePage = () => {
 
       <Container>
         <Title>dhkang utils</Title>
+        <Description>
+    These tools were built out of personal need. If you find anything that can be improved or you'd like to request a new tool, feel free to email me.
+    Suggestions are welcome, and if you want, I can even tag your nickname on the tool page!
+  </Description>
         <ToolList>
           {tools.map((tool) => (
             <ToolItem key={tool.path}>
