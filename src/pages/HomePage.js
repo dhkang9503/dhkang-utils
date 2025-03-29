@@ -86,11 +86,11 @@ const HomePage = () => {
       <Container>
         <Title>dhkang utils</Title>
         <Description>
-    These tools were built out of personal need. 
-    If you find anything that can be improved or you'd like to request a new tool, feel free to email me.
-    Suggestions are welcome, and if you want, I can even tag your nickname on the tool page!
-  
-    dhkang9503@gmail.com 😎
+    These tools were built out of personal need. <br/>
+    If you find anything that can be improved or you'd like to request a new tool, feel free to email me.<br/>
+    Suggestions are welcome, and if you want, I can even tag your nickname on the tool page!<br/>
+    <br/>
+    dhkang9503@gmail.com 😎<br/>
   </Description>
         <ToolList>
           {tools.map((tool) => (
