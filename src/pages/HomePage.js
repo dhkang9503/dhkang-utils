@@ -75,11 +75,27 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>dhkang utils - 유용한 도구 모음</title>
-        <meta
-          name="description"
-          content="집중력 향상과 일상에 도움이 되는 다양한 유틸리티 도구를 제공합니다. 포모도로 타이머, 단위 변환기 등."
-        />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5E3Z1RNMN"></script>
+<script>
+  {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5E3Z1RNMN');
+  `}
+</script>
+        <title>dhkang utils - Productivity Tools for Developers & Designers | Focus & Utility</title>
+  <meta name="description" content="Enhance your focus and daily productivity with a collection of utility tools tailored for developers and designers." />
+  <meta name="keywords" content="developer tools, designer tools, productivity, focus, utility tools, web tools, daily workflow, UI/UX, coding tools, creative tools" />
+  <meta name="author" content="dhkang-utils" />
+  <meta property="og:title" content="Productivity Tools for Developers & Designers" />
+  <meta property="og:description" content="Boost your workflow with focus-enhancing and productivity-driven tools made for creatives and coders." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dhkang-utils.netlify.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Productivity Tools for Developers & Designers" />
+  <meta name="twitter:description" content="Explore utility tools designed to help you stay focused and productive every day." />
         <link rel="canonical" href="https://dhkang-utils.netlify.app" />
       </Helmet>
 
