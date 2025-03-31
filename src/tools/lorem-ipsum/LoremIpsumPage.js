@@ -24,6 +24,16 @@ const LoremIpsumPage = () => {
   return (
     <>
       <Helmet>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QMLB53J2V"></script>
+<script>{`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0QMLB53J2V');
+  `}
+</script>
         <title>Lorem Ipsum Generator | Free Placeholder Text</title>
         <meta name="description" content="Generate customizable Lorem Ipsum placeholder text for your designs and mockups." />
         <link rel="canonical" href="https://dhkang-utils.netlify.app/tools/lorem-ipsum" />
